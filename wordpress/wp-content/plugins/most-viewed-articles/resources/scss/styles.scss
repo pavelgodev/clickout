@@ -1,0 +1,59 @@
+.mva-widget {
+  font-family: Arial, sans-serif;
+
+  .mva-tabs {
+    display:flex;
+    gap:6px;
+    margin-bottom:8px;
+
+    .mva-list {
+      min-height:40px;
+
+      .mva-loading {
+        color:#777;
+        font-size:13px;
+        padding:6px 0;
+      }
+    }
+  }
+
+  .mva-tab {
+    padding:6px 10px;
+    border:1px solid #ddd;
+    background:#f9f9f9;
+    cursor:pointer;
+    border-radius:4px;
+    font-size:13px;
+
+    &.mva-active {
+      background:#fff;
+      border-bottom:2px solid #0073aa;
+    }
+  }
+
+}
+.mva-line {
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:4px 0;
+  border-bottom:1px solid #f1f1f1;
+
+  .mva-rank {
+    width:28px;
+    text-align:right;
+    font-weight:700;
+    color:#333;
+  }
+
+  .mva-title a {
+    text-decoration:none;
+    color:#0073aa;
+
+    &:hover { text-decoration:underline; }
+  }
+}
+
+.mva-empty, .mva-error {
+  color:#666;
+}

@@ -1,0 +1,16 @@
+{
+    "name": "hyperion-user/most-viewed-articles",
+    "description": "Most Viewed Articles Plugin",
+    "autoload": {
+        "psr-4": {
+            "MostViewedArticles\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "pavel.moiseenko",
+            "email": "pavelmail07@gmail.com"
+        }
+    ],
+    "require": {}
+}

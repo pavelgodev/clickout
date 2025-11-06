@@ -22,3 +22,5 @@
 !/wordpress/wp-content/plugins/
 /wordpress/wp-content/plugins/*
 # Include custom plugins here
+!/wordpress/wp-content/plugins/most-viewed-articles
+/wordpress/wp-content/plugins/most-viewed-articles/node_modules
