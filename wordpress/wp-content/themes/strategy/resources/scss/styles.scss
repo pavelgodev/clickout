@@ -32,8 +32,7 @@ body {
     .author-page {
       flex-basis: 67%;
       padding: 40px;
-      //border-right: 1px solid $neutral-950;
-      box-shadow: 1px 0 0 0 red;
+      box-shadow: 1px 0 0 0 $neutral-800;
 
       .author-card {
         margin-bottom: 20px;
@@ -138,3 +137,39 @@ body {
   }
 }
 
+.latest-news {
+  &__title {
+    font-weight: $bold;
+    font-size: $font-size-heading-3;
+    line-height: $line-height-heading-3;
+  }
+
+  &__link {
+    color: $primary-blue;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    text-align: center;
+    display: block;
+  }
+
+  &__items .author-news:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 40px;
+  }
+}
+
+.author-news{
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 15px 0 11px;
+
+
+
+  &__title {
+    font-size: $font-size-heading-5;
+    line-height: $line-height-heading-5;
+    font-weight: $semi-bold;
+  }
+}

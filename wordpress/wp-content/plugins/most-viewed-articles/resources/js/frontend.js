@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 (function($){
     var REST_ROOT = (typeof MVA_Config !== 'undefined' && MVA_Config.rest_url) ? MVA_Config.rest_url : '/wp-json/mva/v1';
     var NONCE = (typeof MVA_Config !== 'undefined' && MVA_Config.nonce) ? MVA_Config.nonce : '';

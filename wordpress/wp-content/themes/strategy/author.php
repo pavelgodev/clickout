@@ -30,10 +30,13 @@ get_header(); ?>
     <aside class="sidebar">
         <div class="latest-news">
             <h2 class="latest-news__title">Latest News</h2>
+            <div class="latest-news__items">
             <?php for ( $i = 0; $i < 5; $i ++ ) {
                 get_template_part( 'template-parts/content/content', 'news' );
             }
             ?>
+            </div>
+            <a href="#" class="latest-news__link">Show all news</a>
         </div>
     </aside>
 

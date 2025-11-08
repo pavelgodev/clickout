@@ -358,7 +358,7 @@ body h2 {
 .author .wrap .author-page {
   flex-basis: 67%;
   padding: 40px;
-  box-shadow: 1px 0 0 0 red;
+  box-shadow: 1px 0 0 0 #E6E6E6;
 }
 .author .wrap .author-page .author-card {
   margin-bottom: 20px;
@@ -438,6 +438,34 @@ body h2 {
 .author-post--underlined {
   padding-bottom: 15px;
   border-bottom: 1px solid #F3F3F3;
+}
+.latest-news__title {
+  font-weight: 700;
+  font-size: 19.8px;
+  line-height: 1.2;
+}
+.latest-news__link {
+  color: #006CB0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  text-align: center;
+  display: block;
+}
+.latest-news__items .author-news:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 40px;
+}
+.author-news {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 15px 0 11px;
+}
+.author-news__title {
+  font-size: 15.3px;
+  line-height: 1.2;
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=styles.css.map*/
