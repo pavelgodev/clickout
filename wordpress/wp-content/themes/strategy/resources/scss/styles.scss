@@ -1,0 +1,140 @@
+@import 'reset-css/reset';
+@import 'normalize.css';
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $neutral-900;
+  font-size: $font-size-medium;
+  line-height: $line-height-medium;
+  font-family: 'Open Sans', sans-serif;
+
+  h2 {
+    color: $neutral-100;
+    font-size: $font-size-heading-3;
+    line-height: $font-size-heading-3;
+  }
+}
+.author{
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    background: $neutral-1000;
+
+    .author-page {
+      flex-basis: 67%;
+      padding: 40px;
+      //border-right: 1px solid $neutral-950;
+      box-shadow: 1px 0 0 0 red;
+
+      .author-card {
+        margin-bottom: 20px;
+      }
+
+      .author-bio {
+        margin-bottom: 40px;
+      }
+    }
+
+    .sidebar {
+      flex-basis: 33%;
+      padding: 42px 40px 40px;
+    }
+  }
+
+  .container{
+    margin-bottom: 24px;
+  }
+}
+
+.author-card {
+  display: flex;
+  gap: 20px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    color: $neutral-100;
+    font-size: $font-size-heading-1;
+    line-height: $line-height-heading-1;
+    font-weight: $extra-bold;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &__position {
+    font-size: $font-size-heading-5;
+    line-height: $line-height-heading-5;
+    color: $neutral-100;
+  }
+
+  .socials {
+    margin-top: auto;
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: end;
+  gap: 5px;
+
+  &__link {
+    display: block;
+    line-height: 0;
+    font-size: 10px;
+  }
+}
+
+.author-bio {
+  padding: 20px 0 0 0;
+
+  &__title {
+    font-weight: $bold;
+    margin-bottom: 20px;
+  }
+
+  &--border-top {
+    border-top: 1px solid $neutral-700;
+  }
+}
+
+.author-posts{
+  &__title {
+    font-weight: $bold;
+    margin-bottom: 20px;
+  }
+
+  .author-post {
+    margin-bottom: 15px;
+  }
+}
+
+.author-post {
+  display: flex;
+  gap: 20px;
+
+  &__title {
+    font-size: $font-size-heading-4;
+    line-height: $line-height-heading-4;
+    font-weight: $bold;
+    color: $primary-blue;
+    margin-bottom: 10px;
+  }
+
+  &--underlined {
+    padding-bottom: 15px;
+    border-bottom: 1px solid $neutral-950;
+  }
+}
+

@@ -1,0 +1,22 @@
+{
+  "name": "startegy-theme",
+  "version": "1.0.0",
+  "description": "Most viewed articles plugin",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start --webpack-src-dir=resources --output-path=public",
+    "build": "wp-scripts build --webpack-src-dir=resources --output-path=public"
+  },
+  "author": "Pavel Moiseenko",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^30.27.0",
+    "copy-webpack-plugin": "^13.0.1",
+    "path": "^0.12.7",
+    "reset-css": "^5.0.2",
+    "webpack-remove-empty-scripts": "^1.1.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}

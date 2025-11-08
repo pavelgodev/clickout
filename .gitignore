@@ -16,7 +16,8 @@
 !/wordpress/wp-content/themes/
 /wordpress/wp-content/themes/*
 # Include custom themes here
-
+!/wordpress/wp-content/themes/strategy
+/wordpress/wp-content/themes/strategy/node_modules
 
 ## Plugins: include the directory, exclude all subdirectories except those specified
 !/wordpress/wp-content/plugins/
