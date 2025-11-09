@@ -355,6 +355,9 @@ body h2 {
   font-size: 19.8px;
   line-height: 19.8px;
 }
+body .hide {
+  display: none;
+}
 .author .wrap {
   max-width: 960px;
   margin: 0 auto;
@@ -445,6 +448,13 @@ body h2 {
 .author-bio__title {
   font-weight: 700;
   margin-bottom: 20px;
+}
+.author-bio__content {
+  display: inline;
+}
+.author-bio__expand-btn {
+  text-decoration: none;
+  color: #006CB0;
 }
 .author-bio--border-top {
   border-top: 1px solid #CCCCCC;

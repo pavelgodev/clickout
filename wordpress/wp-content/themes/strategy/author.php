@@ -42,7 +42,11 @@ $user_photo = get_field( 'user_photo', 'user_' . $author_id );
         <div class="author-bio author-bio--border-top">
             <h2 class="author-bio__title">About <?php echo esc_html( $author->display_name ); ?></h2>
             <?php if ( $bio ): ?>
-                <p class="author-bio__content"><?php echo esc_html( wp_trim_words( $bio, 35, '...' ) ); ?></p>
+                <p class="author-bio__content author-bio__content--trimmed">
+                    <?php echo esc_html( wp_trim_words( $bio, 35, '...' ) ); ?>
+                </p>
+                <p class="author-bio__content author-bio__content--full hide "><?php echo esc_html( $bio ); ?></p>
+                <a href="#" class="author-bio__expand-btn"><?php _e('Expand', 'strategy');?></a>
             <?php endif; ?>
         </div>
         <?php

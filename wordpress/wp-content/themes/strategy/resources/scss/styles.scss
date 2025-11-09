@@ -26,6 +26,10 @@ body {
     font-size: $font-size-heading-3;
     line-height: $font-size-heading-3;
   }
+
+  .hide {
+    display: none;
+  }
 }
 .author{
   .wrap {
@@ -128,6 +132,16 @@ body {
     font-weight: $bold;
     margin-bottom: 20px;
   }
+
+  &__content {
+    display: inline;
+  }
+
+  &__expand-btn{
+    text-decoration: none;
+    color: $primary-blue;
+  }
+
 
   &--border-top {
     border-top: 1px solid $neutral-700;
