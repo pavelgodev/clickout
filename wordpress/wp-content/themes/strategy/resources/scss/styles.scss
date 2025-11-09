@@ -40,7 +40,7 @@ body {
     background: $neutral-1000;
 
     .author-page {
-      padding: 40px;
+      padding: 40px 40px 50px;
       box-shadow: 1px 0 0 0 $neutral-800;
 
       @media screen and (min-width: 768px) {
@@ -157,6 +157,11 @@ body {
   .author-post {
     margin-bottom: 15px;
   }
+
+
+  &__items .author-post:last-child {
+    margin-bottom: 20px;
+  }
 }
 
 .author-post {
@@ -224,5 +229,62 @@ body {
       font-size: $font-size-heading-5;
       line-height: $line-height-heading-5;
     }
+  }
+}
+
+.pagination {
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 7.4px;
+    justify-content: flex-end;
+  }
+
+  .page-numbers {
+    text-decoration: none;
+    color: $neutral-300;
+    font-weight: $bold;
+    display: flex;
+    border: 1px solid $neutral-700;
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    border-radius: 50%;
+
+    &.current {
+      background-color: $neutral-800;
+      color: $neutral-100;
+    }
+
+    &.prev:before, &.next:before{
+      content: '';
+      width: 9px;
+      height: 13px;
+      background-image: url('../images/pagination/arrow.png');
+    }
+
+    &.prev:before{
+      rotate: 180deg;
+    }
+
+    &.last-page-btn{
+      width: auto;
+      color: $neutral-300;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border-radius: 20px;
+    }
+  }
+}
+
+.last-page-btn {
+  padding: 0 10px;
+
+  &__title{
+    display: inline-block;
   }
 }

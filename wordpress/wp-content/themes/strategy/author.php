@@ -54,12 +54,23 @@ $user_photo = get_field('user_photo', 'user_' . $author_id);
             <div class="author-posts">
                 <h2 class="author-posts__title"><?php printf(esc_html__('Latest Posts from %s', 'strategy'),
                             esc_html(get_the_author_meta('first_name'))); ?></h2>
-                <?php while (have_posts()) : ?>
-                    <?php the_post(); ?>
-                    <?php get_template_part('template-parts/content/content', 'article'); ?>
-                <?php endwhile; ?>
-
-                <?php the_posts_pagination(); ?>
+                <div class="author-posts__items">
+                    <?php while (have_posts()) : ?>
+                        <?php the_post(); ?>
+                        <?php get_template_part('template-parts/content/content', 'article'); ?>
+                    <?php endwhile; ?>
+                </div>
+                <?php the_posts_pagination(
+                        array(
+                                'class' => 'pagination',
+                                'end_size' => 3,
+                                'mid_size' => 1,
+                                'prev_next' => true,
+                                'prev_text' => '',
+                                'next_text' => '',
+                        )
+                );
+                ?>
             </div>
         <?php else : ?>
             <?php get_template_part('template-parts/content/content-none'); ?>
@@ -79,13 +90,14 @@ $user_photo = get_field('user_photo', 'user_' . $author_id);
 
         if ($latest_posts->have_posts()) : ?>
             <div class="latest-news">
-                <h2 class="latest-news__title"><?php esc_html_e('Latest News', 'strategy');?></h2>
+                <h2 class="latest-news__title"><?php esc_html_e('Latest News', 'strategy'); ?></h2>
                 <div class="latest-news__items">
                     <?php while ($latest_posts->have_posts()) : $latest_posts->the_post();
                         get_template_part('template-parts/content/content', 'news');
                     endwhile; ?>
                 </div>
-                <a href="<?php echo get_post_type_archive_link( 'post' ); ?>" class="latest-news__link"><?php esc_html_e('Show all news', 'strategy'); ?></a>
+                <a href="<?php echo get_post_type_archive_link('post'); ?>"
+                   class="latest-news__link"><?php esc_html_e('Show all news', 'strategy'); ?></a>
             </div>
         <?php endif; ?>
     </aside>
