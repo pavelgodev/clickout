@@ -1,13 +1,15 @@
 <?php
 
-get_header(); ?>
+get_header();
+
+$author = get_queried_object(); ?>
 
     <section class="author-page">
         <div class="author-card">
             <img src="<?php echo get_theme_file_uri() . '/public/images/author.jpg'; ?>" alt=""
                  class="author-card__image">
             <div class="author-card__info">
-                <h1 class="author-card__name">Barry Carter</h1>
+                <h1 class="author-card__name"><?php echo esc_html( $author->display_name );?></h1>
                 <p class="author-card__position">Poker Expert</p>
                 <?php get_template_part( 'template-parts/content/socials' ); ?>
             </div>
