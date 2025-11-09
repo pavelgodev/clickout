@@ -464,6 +464,9 @@ body h2 {
   -o-object-fit: contain;
      object-fit: contain;
 }
+.author-post__link {
+  text-decoration: none;
+}
 .author-post__title {
   font-size: 17.1px;
   line-height: 1.2;

@@ -14,13 +14,13 @@ $social_links = [
         'linkedin'  => get_field( 'linkedin_url', 'user_' . $author_id ),
 ];
 
-$bio = get_field( 'bio', 'user_' . $author_id );
-$user_photo = get_field('user_photo', 'user_' . $author_id);
+$bio        = get_field( 'bio', 'user_' . $author_id );
+$user_photo = get_field( 'user_photo', 'user_' . $author_id );
 ?>
 
     <section class="author-page">
         <div class="author-card">
-            <?php if ($user_photo && is_array($user_photo)) {
+            <?php if ( $user_photo && is_array( $user_photo ) ) {
                 echo wp_get_attachment_image(
                         $user_photo['ID'],
                         'author-thumbnail',
@@ -30,7 +30,7 @@ $user_photo = get_field('user_photo', 'user_' . $author_id);
                                 'class' => 'author-card__image'
                         )
                 );
-            }?>
+            } ?>
             <div class="author-card__info">
                 <h1 class="author-card__name"><?php echo esc_html( $author->display_name ); ?></h1>
                 <?php if ( $position ): ?>
@@ -45,14 +45,33 @@ $user_photo = get_field('user_photo', 'user_' . $author_id);
                 <p class="author-bio__content"><?php echo esc_html( wp_trim_words( $bio, 35, '...' ) ); ?></p>
             <?php endif; ?>
         </div>
-        <div class="author-posts">
-            <h2 class="author-posts__title">Latest Post
-                from <?php echo esc_html( get_the_author_meta( 'first_name' ) ); ?></h2>
-            <?php for ( $i = 0; $i < 10; $i ++ ) {
-                get_template_part( 'template-parts/content/content', 'article' );
-            }
-            ?>
-        </div>
+        <?php
+        $paged = max( 1, get_query_var( 'paged' ), get_query_var( 'page' ) );
+
+        $args = array(
+                'author'         => $author_id,
+                'post_type'      => 'post',
+                'post_status'    => 'publish',
+                'orderby'        => 'date',
+                'order'          => 'DESC',
+                'paged'          => $paged,
+                'posts_per_page' => 3,
+        );
+
+        $author_posts = new WP_Query( $args );
+
+        if ( $author_posts->have_posts() ) :?>
+
+            <div class="author-posts">
+                <h2 class="author-posts__title">Latest Post
+                    from <?php echo esc_html( get_the_author_meta( 'first_name' ) ); ?></h2>
+                <?php while ( $author_posts->have_posts() ) : $author_posts->the_post();
+                    get_template_part( 'template-parts/content/content', 'article' );
+                endwhile; ?>
+            </div>
+        <?php endif;
+        wp_reset_postdata();
+        ?>
     </section>
     <aside class="sidebar">
         <div class="latest-news">

@@ -26,7 +26,10 @@ function strategy_assets() {
 }
 
 function strategy_setup() {
+	add_theme_support('post-thumbnails');
+
 	add_image_size('author-thumbnail', 177, 177, true);
+	add_image_size('post-thumbnail', 176, 119, true);
 }
 
 add_action('after_setup_theme', 'strategy_setup');
